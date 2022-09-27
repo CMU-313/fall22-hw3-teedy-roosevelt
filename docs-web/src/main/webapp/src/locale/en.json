@@ -281,7 +281,10 @@
     "menu_ldap": "LDAP authentication",
     "menu_metadata": "Custom metadata",
     "menu_monitoring": "Monitoring",
-    "average_peer_review_score": "Average Peer Review Scores",
+    "menu_avg_review_score": "Average Review Scores",
+    "review_score": {
+      "title": "Average Review Scores"
+    },
     "ldap": {
       "title": "LDAP authentication",
       "enabled": "Enable LDAP authentication",
