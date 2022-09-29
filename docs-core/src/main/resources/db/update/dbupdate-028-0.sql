@@ -6,7 +6,7 @@ create memory table T_REVIEW (
     REV_DOCID_C varchar(36),
     REV_REVIEWERID_C varchar(36),
     REV_CREATEDATE_D date not null,
-    REV_DELETEDATE_D date not null,
+    REV_DELETEDATE_D date,
     primary key (REV_REVIEWID_C)
 );
 
