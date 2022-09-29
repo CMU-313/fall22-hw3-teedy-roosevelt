@@ -36,14 +36,14 @@ public class Review implements Loggable{
     /**
      * Rating.
      */
-    @Column(name = "REV_RATING_C", length = 36)
+    @Column(name = "REV_RATING_C")
     private Integer rating;
 
     /**
      * Review ID.
      */
     @Id
-    @Column(name = "REV_REVIEWID_C", length = 36)
+    @Column(name = "REV_REVIEWID_C", length = 36, nullable = false)
     private String reviewId;
 
     /**
@@ -61,7 +61,7 @@ public class Review implements Loggable{
     /**
      * Reviewer ID.
      */
-    @Column(name = "REV_REVIEWERID_C", nullable = false, length = 36)
+    @Column(name = "REV_REVIEWERID_C", length = 36)
     private String reviewerId;
 
     /**
