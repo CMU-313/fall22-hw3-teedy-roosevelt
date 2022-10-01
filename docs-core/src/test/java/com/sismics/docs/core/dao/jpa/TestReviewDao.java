@@ -2,15 +2,18 @@ package com.sismics.docs.core.dao.jpa;
 
 import com.sismics.docs.BaseTransactionalTest;
 import com.sismics.docs.core.dao.ReviewDao;
-import com.sismics.docs.core.model.jpa.Review;
-import com.sismics.docs.core.util.TransactionUtil;
 import com.sismics.docs.core.dao.dto.ReviewAggDto;
 import org.junit.Assert;
 import org.junit.Test;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import java.util.List;
 
 public class TestReviewDao extends BaseTransactionalTest {
+    /** Logger. */
+    private static final Logger log = LoggerFactory.getLogger(TestReviewDao.class);
+
     @Test
     public void testReviewDao() throws Exception {
         // Create 4 new reviews for 3 documents and 2 users
@@ -28,13 +31,13 @@ public class TestReviewDao extends BaseTransactionalTest {
         for (ReviewAggDto res : output) {
             if (res.getUsername() == "alice" && res.getDocId() == "DocA") {
                 found1 = true;
-                Assert.assertEquals(91.5, res.getAvgRating());
+                Assert.assertEquals(91.5, res.getAvgRating(), 0.1);
             } else if (res.getUsername() == "alice" && res.getDocId() == "DocB") {
                 found2 = true;
-                Assert.assertEquals(91, res.getAvgRating());
+                Assert.assertEquals(91, res.getAvgRating(), 0.1);
             } else if (res.getUsername() == "chris" && res.getDocId() == "DocC") {
                 found3 = true;
-                Assert.assertEquals(80, res.getAvgRating());
+                Assert.assertEquals(80, res.getAvgRating(), 0.1);
             }
         }
 

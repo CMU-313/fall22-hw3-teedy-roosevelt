@@ -57,14 +57,18 @@ public class ReviewDao {
     public List<ReviewAggDto> getAverageScorePerApplication() {
         List<ReviewAggDto> result = new ArrayList<ReviewAggDto>();
         EntityManager em = ThreadLocalContext.get().getEntityManager();
-        Query q = em.createQuery("select REV_USERNAME_C, REV_DOCID_C, AVG(REV_RATING_C) from T_REVIEW group by REV_USERNAME_C, REV_DOCID_C");
+        Query q = em.createQuery("select r.userName, r.docId, AVG(CAST(r.rating as double)) from Review r group by r.userName, r.docId");
         List<Object[]> l = q.getResultList();
         for (Object[] o : l) {
             int i = 0;
             ReviewAggDto data = new ReviewAggDto();
-            data.setUsername((String) o[i++]);
-            data.setDocId((String) o[i++]);
-            data.setAvgRating(((Number) o[i++]).longValue());
+            String username = (String) o[i++];
+            String docId = (String) o[i++];
+            double avgRating = ((double) o[i++]);
+            data.setUsername(username);
+            data.setDocId(docId);
+            data.setAvgRating(avgRating);
+            result.add(data);
         }
         return result;
     }

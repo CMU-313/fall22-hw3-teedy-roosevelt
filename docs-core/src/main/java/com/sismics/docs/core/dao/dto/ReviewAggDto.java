@@ -15,7 +15,7 @@ public class ReviewAggDto {
     /**
      * Average Rating.
      */
-    private long avgRating;
+    private double avgRating;
 
     public String getUsername() {
         return username;
@@ -33,11 +33,11 @@ public class ReviewAggDto {
         this.docId = docId;
     }
 
-    public long getAvgRating() {
+    public double getAvgRating() {
         return avgRating;
     }
 
-    public void setAvgRating(long avgRating) {
+    public void setAvgRating(double avgRating) {
         this.avgRating = avgRating;
     }
 }
