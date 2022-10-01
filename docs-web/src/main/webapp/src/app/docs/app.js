@@ -127,6 +127,15 @@ angular.module('docs',
         }
       }
     })
+    .state('settings.review_score', {
+      url: '/review_score',
+      views:{
+        'settings': {
+          templateUrl: 'partial/docs/settings.review_scores.html',
+          controller: 'SettingsReviewScore'
+        }
+      }
+    })
     .state('settings.config', {
       url: '/config',
       views: {
