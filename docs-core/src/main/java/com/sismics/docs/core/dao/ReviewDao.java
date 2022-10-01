@@ -34,7 +34,7 @@ public class ReviewDao {
         String reviewId = UUID.randomUUID().toString();
         review.setReviewId(reviewId);
 
-        // Populate hte other fields
+        // Populate the other fields
         review.setUserId(userId);
         review.setUserName(username);
         review.setDocId(documentId);
