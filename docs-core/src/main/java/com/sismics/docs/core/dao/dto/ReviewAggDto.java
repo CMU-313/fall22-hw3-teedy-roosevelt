@@ -1,5 +1,9 @@
 package com.sismics.docs.core.dao.dto;
 
+/*
+ * Data Transfer Object to pass around information about the average review
+ * score for a certain (username, docId) combination.
+ */
 public class ReviewAggDto {
 
     /**

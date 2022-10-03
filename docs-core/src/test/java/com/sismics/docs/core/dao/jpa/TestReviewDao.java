@@ -23,24 +23,24 @@ public class TestReviewDao extends BaseTransactionalTest {
         reviewDao.create("2", "chris", "DocC", "RevA", 80);
         reviewDao.create("1", "alice", "DocA", "RevB", 93);
 
-        // Verify that the lookup query contains these three in there
+        // Verify that the lookup query contains the correct averages for these
+        // three distinct entries
         Boolean found1 = false;
         Boolean found2 = false;
         Boolean found3 = false;
-        List<ReviewAggDto> output = reviewDao.getAverageScorePerApplication();
-        for (ReviewAggDto res : output) {
-            if (res.getUsername() == "alice" && res.getDocId() == "DocA") {
+        List<ReviewAggDto> userAppAverageScores = reviewDao.getAverageScorePerApplication();
+        for (ReviewAggDto userAppAverageScore : userAppAverageScores) {
+            if (userAppAverageScore.getUsername() == "alice" && userAppAverageScore.getDocId() == "DocA") {
                 found1 = true;
-                Assert.assertEquals(91.5, res.getAvgRating(), 0.1);
-            } else if (res.getUsername() == "alice" && res.getDocId() == "DocB") {
+                Assert.assertEquals(91.5, userAppAverageScore.getAvgRating(), 0.1);
+            } else if (userAppAverageScore.getUsername() == "alice" && userAppAverageScore.getDocId() == "DocB") {
                 found2 = true;
-                Assert.assertEquals(91, res.getAvgRating(), 0.1);
-            } else if (res.getUsername() == "chris" && res.getDocId() == "DocC") {
+                Assert.assertEquals(91, userAppAverageScore.getAvgRating(), 0.1);
+            } else if (userAppAverageScore.getUsername() == "chris" && userAppAverageScore.getDocId() == "DocC") {
                 found3 = true;
-                Assert.assertEquals(80, res.getAvgRating(), 0.1);
+                Assert.assertEquals(80, userAppAverageScore.getAvgRating(), 0.1);
             }
         }
-
         Assert.assertTrue(found1);
         Assert.assertTrue(found2);
         Assert.assertTrue(found3);
