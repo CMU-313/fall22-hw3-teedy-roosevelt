@@ -45,7 +45,5 @@ public class TestReviewResource extends BaseJerseyTest {
         Assert.assertEquals("Florentino Perez", entry2.getString(username));
         Assert.assertEquals("doc1234", entry2.getString(docId));
         Assert.assertEquals(10, entry2.getInt(averageRating));
-        log.info(json.toString());
-        log.info("ALEJANDRO'S TEST DID NOT ERROR!\n\n");
     }
 }
