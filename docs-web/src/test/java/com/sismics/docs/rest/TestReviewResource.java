@@ -42,16 +42,16 @@ public class TestReviewResource extends BaseJerseyTest {
         JsonObject entry0 = json.getJsonArray("ratings").getJsonObject(0);
         Assert.assertEquals("Florentino Perez", entry0.getString(username));
         Assert.assertEquals("doc15", entry0.getString(docId));
-        Assert.assertEquals(100, entry0.getInt(averageRating));
+        Assert.assertEquals(200, entry0.getInt(averageRating));
 
         JsonObject entry1 = json.getJsonArray("ratings").getJsonObject(1);
         Assert.assertEquals("Leo Messi", entry1.getString(username));
         Assert.assertEquals("doc10", entry1.getString(docId));
-        Assert.assertEquals(99, entry1.getInt(averageRating));
+        Assert.assertEquals(150, entry1.getInt(averageRating));
 
         JsonObject entry2 = json.getJsonArray("ratings").getJsonObject(2);
         Assert.assertEquals("Cristiano Ronaldo", entry2.getString(username));
         Assert.assertEquals("doc7", entry2.getString(docId));
-        Assert.assertEquals(98, entry2.getInt(averageRating));
+        Assert.assertEquals(125, entry2.getInt(averageRating));
     }
 }
