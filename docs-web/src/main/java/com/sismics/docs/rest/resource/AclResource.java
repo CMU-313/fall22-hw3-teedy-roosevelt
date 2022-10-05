@@ -88,7 +88,6 @@ public class AclResource extends BaseResource {
         if (!aclDao.checkPermission(sourceId, PermType.WRITE, getTargetIdList(null))) {
             throw new ForbiddenClientException();
         }
-        
         // Create the ACL
         Acl acl = new Acl();
         acl.setSourceId(sourceId);
@@ -192,7 +191,7 @@ public class AclResource extends BaseResource {
                 .add("status", "ok");
         return Response.ok().entity(response.build()).build();
     }
-    
+
     /**
      * Search possible ACL target.
      *
