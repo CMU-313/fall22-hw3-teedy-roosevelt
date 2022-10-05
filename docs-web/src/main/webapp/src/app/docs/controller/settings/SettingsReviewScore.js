@@ -43,7 +43,8 @@ angular.module('docs').controller('SettingsReviewScore', function($scope, Restan
           title: {
             display: true,
             text: 'Predicted world population (millions) in 2050'
-          }
+          },
+          indexAxis: 'y',
         }
     });
   }
