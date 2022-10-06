@@ -13,7 +13,7 @@ angular.module('docs').controller('SettingsReviewScore', function($scope, Restan
   let curr_chart = undefined;
 
   $scope.drawGraph = function() {
-    let search_bar_text = `Display all Users`;
+    let search_bar_text = `Displaying all users`;
     if ($scope.searchUser != undefined && $scope.searchUser != '') {
       search_bar_text = `Displaying "${$scope.searchUser}"`;
     }
@@ -41,6 +41,8 @@ angular.module('docs').controller('SettingsReviewScore', function($scope, Restan
       }
       if (new_data.length != 0) {
         data = new_data;
+      }else {
+        document.getElementById("search-bar-text").innerHTML = `No users for "${curr_search}", displaying all users`;
       }
 
     }
