@@ -17,6 +17,7 @@ angular.module('docs').controller('SettingsReviewScore', function($scope, Restan
     if ($scope.searchUser != undefined && $scope.searchUser != '') {
       search_bar_text = `Displaying "${$scope.searchUser}"`;
     }
+    console.log('searchUser is', $scope.searchUser);
 
     //need to destroy previous instances to curr chart
     //so that charts can use unique IDs
@@ -30,11 +31,11 @@ angular.module('docs').controller('SettingsReviewScore', function($scope, Restan
     console.log('data is', data);
     //now we want to manipulate data to correspond with the search results
     var new_data = [];
-    let curr_search = $scope.searchUser
+    let curr_search = $scope.searchUser;
     if (curr_search != undefined) {
-
+      let curr_search = $scope.searchUser.toLowerCase();
       for (let i = 0; i < data.length; i++) {
-          let curr_username = data[i].username;
+          let curr_username = data[i].username.toLowerCase();
           if (curr_username.includes(curr_search)) {
             new_data.push(data[i]);
           }

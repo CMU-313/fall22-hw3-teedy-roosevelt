@@ -7,12 +7,12 @@
 </head>
 <div class="search-bar">
     <p class="input-group">
-      <span class="input-group-addon"><span class="fas fa-search"></span></span>
+      <span class="input-group-addon" ng-click="drawGraph()"><span class="fas fa-search"></span></span>
       <input type="search" class="form-control" ng-attr-placeholder="{{ 'usergroup.search_users' | translate }}" ng-model="searchUser">
     </p>
     <text id="search-bar-text"></text>
 
 </div>
 <body>
-    <canvas ng-click="drawGraph()" id="bar-chart" width="600" height="400"></canvas>
+    <canvas id="bar-chart" width="600" height="400"></canvas>
 </body>
