@@ -5,29 +5,13 @@
         <span translate="settings.review_score.title"></span>
     </h1>
 </head>
-<div class="well well-3d">
+<div class="search-bar">
     <p class="input-group">
       <span class="input-group-addon"><span class="fas fa-search"></span></span>
       <input type="search" class="form-control" ng-attr-placeholder="{{ 'usergroup.search_users' | translate }}" ng-model="searchUser">
     </p>
+    <text id="search-bar-text">Displaying all Users</text>
 
-    <table class="row table table-hover">
-      <tbody>
-      <tr class="pointer" ng-repeat="user in users | filter: searchUser"
-          ng-click="openUser(user)" ng-class="{ active: $stateParams.username == user.username }">
-        <td class="col-xs-4">
-          <span class="fas fa-user"></span>
-          {{ user.username }}
-          <span class="text-muted" ng-if="userInfo.username == user.username">{{ 'usergroup.you' | translate }}</span>
-        </td>
-      </tr>
-      </tbody>
-    </table>
-
-    <div class="well-3d-background">
-      <span class="fas fa-user"></span>
-    </div>
-  </div>
 </div>
 <body>
     <canvas ng-click="drawGraph()" id="bar-chart" width="600" height="400"></canvas>

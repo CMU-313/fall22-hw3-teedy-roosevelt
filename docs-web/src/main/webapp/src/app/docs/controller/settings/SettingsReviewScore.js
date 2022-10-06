@@ -4,14 +4,20 @@
  * Settings monitoring controller.
  */
 angular.module('docs').controller('SettingsReviewScore', function($scope, Restangular) {
+  console.log('first scope', $scope)
   Restangular.one('user_rating').get().then(function(data) {
     $scope.user_rating = data;
     console.log('scope is', $scope);
   });
 
   $scope.drawGraph = function() {
-
+    let search_bar_text = `Display all Users`;
+    if ($scope.searchUser != undefined) {
+      search_bar_text = `Displaying "${$scope.searchUser}"`;
+    }
+    document.getElementById("search-bar-text").innerHTML = search_bar_text;
     var data = $scope.user_rating.ratings;
+    console.log('searchUser value:', $scope.searchUser);
     console.log($scope.user_rating.ratings);
 
     var labels = [];
