@@ -10,11 +10,19 @@ angular.module('docs').controller('SettingsReviewScore', function($scope, Restan
     console.log('scope is', $scope);
   });
 
+  let curr_chart = undefined;
+
   $scope.drawGraph = function() {
     let search_bar_text = `Display all Users`;
     if ($scope.searchUser != undefined) {
       search_bar_text = `Displaying "${$scope.searchUser}"`;
     }
+
+    console.log('curr chart', curr_chart);
+    if (curr_chart != undefined){
+      curr_chart.destroy();
+    }
+
     document.getElementById("search-bar-text").innerHTML = search_bar_text;
     var data = $scope.user_rating.ratings;
     console.log('searchUser value:', $scope.searchUser);
@@ -40,15 +48,15 @@ angular.module('docs').controller('SettingsReviewScore', function($scope, Restan
       ]
     };
     
-    var countries = document.getElementById('bar-chart').getContext('2d');
-    new Chart(countries, {
+
+    var user_data = document.getElementById('bar-chart').getContext('2d');
+    curr_chart = new Chart(user_data, {
         type: "bar",
         data: barData, 
         options: {
           legend: { display: false },
           title: {
             display: true,
-            text: 'Predicted world population (millions) in 2050'
           },
           indexAxis: 'y',
         }
