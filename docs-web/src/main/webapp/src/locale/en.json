@@ -258,7 +258,7 @@
   },
   "usergroup": {
     "search_groups": "Search in groups",
-    "search_users": "Search in users",
+    "search_users": "Search in users (or click on the search button to display all users)",
     "you": "It's you!",
     "default": {
       "title": "Users & Groups",
@@ -281,6 +281,10 @@
     "menu_ldap": "LDAP authentication",
     "menu_metadata": "Custom metadata",
     "menu_monitoring": "Monitoring",
+    "menu_average_review_score": "Average Review Scores",
+    "review_score": {
+      "title": "Average Review Scores"
+    },
     "ldap": {
       "title": "LDAP authentication",
       "enabled": "Enable LDAP authentication",
