@@ -51,3 +51,14 @@ npm install
 npm install -g pkg
 pkg .
 ```
+
+## Installation Steps
+Clone the repository to your local machine and then use Maven to build Teedy from source by running the following command from the root directory:
+```console
+mvn clean -DskipTests install
+```
+After successfully building Teedy from source, you can launch a Teedy instance by running the following commands from the root directory:
+```console
+cd docs-web
+mvn jetty:run
+```
