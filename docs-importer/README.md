@@ -62,3 +62,5 @@ After successfully building Teedy from source, you can launch a Teedy instance b
 cd docs-web
 mvn jetty:run
 ```
+
+Access the reviews table by clicking the admin icon on the top right of the screen. Under general settings, you can access the reviews table in Average Reviews Scores. Refresh table by clicking on the magnifying glass icon in the search bar.
